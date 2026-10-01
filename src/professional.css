@@ -1,29 +1,48 @@
-.experience-interactive{--work-muted:#aaa;--work-border:#ffffff18;--work-surface:#ffffff03;border-top:2px solid var(--red);padding:32px}
+.experience-interactive{--work-muted:#aaa;--work-border:#ffffff18;--work-surface:#ffffff05;--work-panel:#111318;border-top:2px solid var(--red);padding:32px}
 .experience-title{display:flex;align-items:center;gap:18px}
 .experience-icon{display:grid;place-items:center;flex-shrink:0;width:52px;height:52px;border-radius:12px;color:#f04e57;background:#e5091414}
-.experience-title h3{font-size:26px;margin:9px 0 0;letter-spacing:-.5px}
+.experience-title h3{font-size:26px;margin:9px 0 0;letter-spacing:0}
 .experience-title h3 span{font-weight:400;color:var(--work-muted)}
 .experience-intro{color:var(--work-muted);font-size:14px;line-height:1.8;margin:24px 0}
-.experience-internship-overview{margin:28px 0 30px;max-width:960px}
+.experience-internship-overview{margin:28px 0 30px;max-width:960px;padding:22px;border:1px solid var(--work-border);border-radius:8px;background:linear-gradient(145deg,#ffffff07,#ffffff02)}
 .experience-internship-overview h4{font-size:16px;margin:0 0 14px}
 .experience-internship-overview p{color:var(--work-muted);font-size:14px;line-height:1.9;margin:0 0 14px}
 .experience-internship-overview p:last-child{margin-bottom:0}
-.internship-summary{max-width:860px}
+.internship-eyebrow{display:flex;align-items:center;gap:10px;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#f04e57;margin:0 0 12px}
+.internship-eyebrow::after{content:"";flex:0 0 46px;height:1px;background:linear-gradient(90deg,#e5091480,transparent)}
+.internship-summary{max-width:900px;font-size:15px;line-height:1.85;color:#d6d8dd;letter-spacing:0}
+.internship-summary strong,.internship-summary em{font-style:normal;color:#fff;font-weight:600}
+.internship-note{position:relative;max-width:900px;padding-left:18px;font-size:13.5px;font-style:italic;color:var(--work-muted)}
+.internship-note::before{content:"";position:absolute;left:0;top:4px;bottom:4px;width:2px;border-radius:2px;background:linear-gradient(180deg,#e50914,#e5091420)}
 .internship-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0}
-.internship-metrics>div{padding:16px;border:1px solid var(--work-border);border-radius:8px;background:linear-gradient(145deg,#ffffff06,#ffffff02)}
-.internship-metrics strong{display:block;font-size:22px;line-height:1.15;letter-spacing:-.4px;color:#fff}
+.internship-metrics>div{position:relative;min-height:116px;padding:16px;border:1px solid var(--work-border);border-radius:8px;background:linear-gradient(145deg,#151820,#0f1015);overflow:hidden}
+.internship-metrics>div::after{content:"";position:absolute;inset:auto 12px 0 12px;height:2px;background:linear-gradient(90deg,#e50914,transparent);opacity:.65}
+.metric-icon{display:grid;place-items:center;width:32px;height:32px;margin-bottom:14px;border-radius:8px;color:#f04e57;background:#e5091414}
+.internship-metrics strong{display:block;font-size:22px;line-height:1.15;letter-spacing:0;color:#fff}
 .internship-metrics span{display:block;margin-top:7px;font-size:11px;line-height:1.5;color:var(--work-muted)}
-.internship-note{max-width:900px}
+.internship-story-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}
+.internship-story-grid section{padding:16px;border:1px solid var(--work-border);border-left:2px solid #e5091480;border-radius:8px;background:#ffffff04}
+.internship-story-grid h5{font-size:12px;margin:0 0 8px;color:#fff}
+.internship-story-grid p{font-size:13px;line-height:1.65;margin:0}
 .experience-highlights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.experience-highlights button{padding:22px;text-align:left;background:var(--work-surface);border:1px solid var(--work-border);border-radius:8px;transition:transform .2s,border-color .2s,background .2s}
-.experience-highlights button:hover{transform:translateY(-3px);border-color:#e5091480}
-.experience-highlights button[aria-pressed=true]{background:#e5091410;border-color:var(--red);box-shadow:inset 0 -3px var(--red)}
+.experience-highlights button{position:relative;min-height:154px;padding:22px;text-align:left;background:var(--work-surface);border:1px solid var(--work-border);border-radius:8px;transition:transform .2s,border-color .2s,background .2s,box-shadow .2s;overflow:hidden}
+.experience-highlights button::after{content:"";position:absolute;left:22px;right:22px;bottom:0;height:3px;border-radius:3px 3px 0 0;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .2s}
+.experience-highlights button:hover{transform:translateY(-3px);border-color:#e5091480;background:#ffffff08}
+.experience-highlights button:focus-visible{outline:2px solid #f04e57;outline-offset:4px}
+.experience-highlights button[aria-pressed=true]{background:#e5091412;border-color:var(--red);box-shadow:0 14px 34px #00000024}
+.experience-highlights button[aria-pressed=true]::after{transform:scaleX(1)}
 .highlight-label{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:600}
 .highlight-label svg{color:#f04e57}
-.experience-highlights strong{display:block;font-size:36px;letter-spacing:-1px;margin:19px 0 4px}
+.experience-highlights strong{display:block;font-size:26px;line-height:1.25;letter-spacing:0;margin:22px 0 6px}
 .highlight-caption{font-size:12px;color:var(--work-muted)}
-.experience-highlight-detail{margin:24px 0 0;padding:8px 0 8px 20px;border-left:2px solid var(--red);min-height:96px}
-.experience-highlight-detail h4{font-size:15px;margin:0 0 8px}
+.experience-highlight-detail{margin:24px 0 0;padding:22px;border:1px solid var(--work-border);border-left:3px solid var(--red);border-radius:8px;background:linear-gradient(145deg,#ffffff07,#ffffff02);min-height:96px}
+.experience-highlight-detail.swipe-next{animation:highlight-slide-next .28s ease}
+.experience-highlight-detail.swipe-prev{animation:highlight-slide-prev .28s ease}
+@keyframes highlight-slide-next{from{opacity:.35;transform:translateX(22px)}to{opacity:1;transform:none}}
+@keyframes highlight-slide-prev{from{opacity:.35;transform:translateX(-22px)}to{opacity:1;transform:none}}
+.highlight-detail-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:10px}
+.highlight-detail-heading span{font-size:11px;color:#f04e57;text-transform:uppercase;font-weight:600}
+.experience-highlight-detail h4{font-size:16px;margin:0}
 .experience-highlight-detail p{font-size:14px;line-height:1.85;color:var(--work-muted)}
 .experience-explanation{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;margin-top:22px}
 .experience-explanation h5{font-size:13px;margin:0 0 8px;font-weight:600}
@@ -43,10 +62,18 @@
 .professional-education .education-card h3{font-size:16px;line-height:1.5;font-weight:600}
 .professional-education .education-card p{font-size:12px}
 .professional-education .education-card>svg{color:#f04e57}
-[data-theme="light"] .experience-interactive{--work-muted:#555f6d;--work-border:#dfe3eb;--work-surface:#f7f8fa;border-top-color:var(--red)}
+[data-theme="light"] .experience-interactive{--work-muted:#555f6d;--work-border:#dfe3eb;--work-surface:#f7f8fa;--work-panel:#fff;border-top-color:var(--red)}
+[data-theme="light"] .experience-internship-overview,[data-theme="light"] .experience-highlight-detail{background:linear-gradient(145deg,#fff,#f8f9fb)}
+[data-theme="light"] .internship-metrics>div{background:linear-gradient(145deg,#fff,#f7f8fa)}
 [data-theme="light"] .internship-metrics strong{color:#172033}
+[data-theme="light"] .metric-icon{color:#b80914;background:#e5091410}
+[data-theme="light"] .internship-summary{color:#2c3542}
+[data-theme="light"] .internship-summary strong,[data-theme="light"] .internship-summary em{color:#0f1521}
+[data-theme="light"] .internship-eyebrow{color:#b80914}
+[data-theme="light"] .internship-story-grid section{background:#f7f8fa}
+[data-theme="light"] .internship-story-grid h5{color:#172033}
 [data-theme="light"] .highlight-label svg,[data-theme="light"] .experience-icon{color:#b80914}
 @media(max-width:900px){.internship-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:760px){.experience-interactive{padding:22px}.experience-title{align-items:flex-start;gap:12px}.experience-title h3{font-size:22px}.experience-title h3 span{display:block;margin-top:5px;font-size:18px}.experience-title .eyebrow{font-size:8px;letter-spacing:1px}.experience-icon{width:40px;height:40px}.experience-highlights{grid-template-columns:1fr;gap:10px}.experience-highlights button{display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px;padding:16px}.experience-highlights strong{grid-column:2;grid-row:1 / 3;font-size:28px;margin:0}.highlight-caption{grid-column:1}.experience-highlight-detail{min-height:0}.professional-education .education-card{flex-wrap:wrap}.professional-education .education-score{width:100%;align-items:flex-start;margin-top:8px}}
-@media(max-width:560px){.internship-metrics{grid-template-columns:1fr}.internship-metrics>div{padding:14px}.internship-metrics strong{font-size:20px}}
-@media(prefers-reduced-motion:reduce){.experience-highlights button,.professional-education .education-card{transition:none}.experience-highlights button:hover,.professional-education .education-card:hover{transform:none}}
+@media(max-width:760px){.experience-interactive{padding:22px}.experience-title{align-items:flex-start;gap:12px}.experience-title h3{font-size:22px}.experience-title h3 span{display:block;margin-top:5px;font-size:18px}.experience-title .eyebrow{font-size:8px;letter-spacing:1px}.experience-icon{width:40px;height:40px}.experience-internship-overview,.experience-highlight-detail{padding:18px}.internship-story-grid{grid-template-columns:1fr}.experience-highlights{grid-template-columns:1fr;gap:10px}.experience-highlights button{display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px;min-height:112px;padding:16px}.experience-highlights strong{grid-column:2;grid-row:1 / 3;font-size:22px;margin:0;text-align:right}.highlight-caption{grid-column:1}.highlight-detail-heading{display:block}.highlight-detail-heading span{display:block;margin-top:6px}.experience-highlight-detail{min-height:0}.professional-education .education-card{flex-wrap:wrap}.professional-education .education-score{width:100%;align-items:flex-start;margin-top:8px}}
+@media(max-width:560px){.internship-metrics{grid-template-columns:1fr}.internship-metrics>div{padding:14px}.internship-metrics strong{font-size:20px}.internship-summary{font-size:14.5px}.internship-note{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.experience-highlights button,.professional-education .education-card{transition:none}.experience-highlights button:hover,.professional-education .education-card:hover{transform:none}.experience-highlight-detail.swipe-next,.experience-highlight-detail.swipe-prev{animation:none}}

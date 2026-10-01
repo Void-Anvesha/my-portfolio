@@ -45,7 +45,7 @@ export const projects = [
   { id:'pantry', title:'Pantry AI', eyebrow:'A FRESH PERSPECTIVE', category:'Project preview', theme:'pantry', icon:'leaf', tagline:'I’m putting the project notes together.', tech:[], github:'https://github.com/Void-Anvesha/Pantry-AI', liveUrl:'https://shopvoice-delta.vercel.app/', metric:'Preview', details:['ShopVoice is a voice-shopping assistant with shopping lists, a cart, meal bundles, and product search. The dashboard supports browser speech recognition and an optional Vapi AI integration.'] },
   { id:'store', title:'Store Intelligence', eyebrow:'CONNECTING THE DOTS', category:'Project preview', theme:'store', icon:'boxes', tagline:'I’m putting the project notes together.', tech:[], github:'https://github.com/Void-Anvesha/Store-Intelligence', metric:'Preview', details:['A retail analytics dashboard preview with store metrics and a conversion funnel.'] },
 ];
-export const experience = [{ id:'amasqis', title:'AI Intern', subtitle:'AmasQIS.ai', eyebrow:'THE REAL-WORLD SEASON', category:'Remote, India · Apr – Sep 2025', theme:'experience', icon:'sparkles', tagline:'During my AI internship at AmasQIS.ai, I worked on property prediction, backend performance, and a financial chatbot. My work combined machine learning with API development and generative AI, from building regression models to improving response times and adding loan-eligibility tools to a conversational application.', tech:['Python','Gemini LLM','FastAPI','Scikit-learn','KNN'], metric:'25% lower latency', details:['I built KNN regression for 15,000+ property records, reaching 93% accuracy across five or more models.','I reworked FastAPI using asynchronous processing and connection pooling, reducing latency by 25% from 400 ms to 300 ms.','I built a Gemini LLM financial chatbot with loan-eligibility tools, serving 500+ users with a 4.3/5 rating.'] }];
+export const experience = [{ id:'amasqis', title:'AI Intern', subtitle:'AmasQIS.ai', eyebrow:'THE REAL-WORLD SEASON', category:'Remote, India · Apr – Sep 2025', theme:'experience', icon:'sparkles', tagline:'During my AI internship at AmasQIS.ai, I worked on property prediction, backend performance, and a financial chatbot. My work combined machine learning with API development and generative AI, from building regression models to improving response times and adding loan-eligibility tools to a conversational application.', tech:['Python','Gemini LLM','FastAPI','Scikit-learn','KNN'], metric:'25% lower latency', details:['Property prediction: cleaned and prepared property data, compared multiple modeling approaches, and implemented KNN regression to predict property values.','API performance: improved FastAPI services with asynchronous processing and connection pooling, reducing request wait time and backend latency.','Financial chatbot: developed a Gemini-powered chatbot for financial questions and loan-eligibility checks, then refined the workflow using user feedback.'] }];
 export const projectOverviews = {
   clinsight: {
     summary: 'I built ClinSight AI to help doctors review patient information before a consultation. It brings retrieval, semantic search, and LLM-based reasoning together in a multi-agent system that produces a 60-second pre-consultation brief.',
@@ -85,6 +85,14 @@ export const projectOverviews = {
       {title:'What it does',text:'The app lets shoppers search for products, manage shopping lists, build a cart, and explore meal bundles from one dashboard.'},
       {title:'Voice experience',text:'ShopVoice supports browser speech recognition so users can interact with the shopping flow by voice, with optional Vapi AI support for a more conversational setup.'},
       {title:'Interface focus',text:'The dashboard keeps shopping actions visible together, making it easier to move between product search, saved lists, cart updates, and suggestions.'},
+    ],
+  },
+  store: {
+    summary: 'Store Intelligence is a retail analytics dashboard preview for tracking store performance, conversion behavior, and operational metrics in one focused interface.',
+    sections: [
+      {title:'What it does',text:'The dashboard brings store metrics and conversion-funnel insights into a single view, helping teams scan performance without moving across multiple reports.'},
+      {title:'Interface focus',text:'The layout emphasizes quick comparison, clear metric hierarchy, and a dashboard structure that works for repeated monitoring rather than one-time presentation.'},
+      {title:'Current status',text:'This is a project preview. The dashboard design and repository are available, with a fuller technical breakdown to be expanded as the implementation details are finalized.'},
     ],
   },
 };
