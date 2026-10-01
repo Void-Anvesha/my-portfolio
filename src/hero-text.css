@@ -1,0 +1,4 @@
+/* Typography only: preserve the original hero copy and layout. */
+.hero h1{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;letter-spacing:-1.8px;line-height:1.15}
+.hero-description{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;font-weight:400;letter-spacing:0;line-height:1.85}
+@media(max-width:760px){.hero h1{letter-spacing:-1px}}

@@ -1,0 +1,27 @@
+.reading-progress{position:fixed;top:0;left:0;width:100%;height:3px;background:#e50914;transform:scaleX(0);transform-origin:left;z-index:100;pointer-events:none}
+.skill-search-bar{display:grid;grid-template-columns:auto minmax(220px,1fr);align-items:center;gap:14px 18px;margin:0 auto 42px;max-width:800px;padding:18px;border:1px solid #8884;border-radius:10px;background:#88888808}
+.skill-search-bar label{font-size:13px;font-weight:600;white-space:nowrap}.skill-search-bar input{min-width:0;width:100%;padding:12px 14px;background:transparent;border:1px solid #8886;border-radius:6px;color:inherit;font:inherit;font-size:13px}.skill-search-bar input:focus-visible{outline:2px solid #e50914;outline-offset:2px}.skill-search-empty{text-align:center;margin-bottom:40px}
+@media(max-width:700px){.skill-search-bar{grid-template-columns:1fr}.skill-search-bar input{grid-row:2}}
+.portfolio-shortcuts{position:fixed;right:24px;bottom:24px;display:flex;gap:8px;z-index:25}
+.portfolio-shortcuts button{display:flex;align-items:center;gap:9px;padding:12px 15px;border:1px solid #ffffff25;background:#242424ed;color:#eee;border-radius:30px;box-shadow:0 6px 24px #0003;backdrop-filter:blur(14px);font-size:12px}
+.portfolio-shortcuts button:hover{border-color:#e50914;background:#333}
+.portfolio-shortcuts kbd{font:10px inherit;color:#aaa;border:1px solid #ffffff20;border-radius:4px;padding:3px}
+.quick-navigation{width:min(520px,calc(100vw - 32px));max-height:80vh;padding:25px;border:1px solid #ffffff25;border-top:3px solid #e50914;border-radius:14px;background:#1b1b1d;color:#eee;box-shadow:0 25px 100px #0008}
+.quick-navigation[open]{animation:menu-enter .2s ease-out}
+.quick-navigation::backdrop{background:#0009;backdrop-filter:blur(8px)}
+.quick-navigation-header{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:22px}
+.quick-navigation h2{font-size:21px}.quick-navigation-header button{display:grid;place-items:center;background:transparent;padding:8px;border-radius:6px}
+.quick-search{display:flex;gap:12px;align-items:center;padding:14px;border:1px solid #ffffff25;border-radius:8px;margin-bottom:18px}
+.quick-search:focus-within{border-color:#e50914}.quick-search input{min-width:0;width:100%;border:0;background:none;color:inherit;font:inherit;outline:none}
+.quick-navigation nav{display:grid;gap:5px}.quick-navigation nav a{display:flex;justify-content:space-between;padding:13px;border-radius:6px;font-size:14px}.quick-navigation nav a:hover,.quick-navigation nav a:focus-visible{background:#e509141a;color:#ff656d}.quick-navigation nav a>span:last-child{font:11px monospace;color:#999}.quick-navigation small{display:block;font-size:11px;color:#999;margin-top:22px}.quick-navigation>p{font-size:13px;line-height:1.7}
+.compact-footer{padding-bottom:70px}
+.experience-highlight-detail{animation:detail-enter .35s ease-out}
+.button:active{transform:scale(.97)}
+@media(hover:hover) and (pointer:fine){.technical-card,.credential-card,.page-callout,.experience-highlights button,.education-card{background-image:radial-gradient(300px circle at var(--light-x,-400px) var(--light-y,-400px),#ffffff0b,transparent 80%);transition:border-color .25s,box-shadow .25s,transform .25s}.technical-card:hover,.credential-card:hover,.page-callout:hover,.education-card:hover{border-color:#e5091466;box-shadow:0 14px 35px #0002}.technical-card:hover>svg,.credential-card:hover .credential-icon{transform:translateY(-4px) rotate(-5deg)}.technical-card>svg,.credential-icon{transition:transform .3s}.top-pick img{transition:transform .6s}.top-pick:hover img{transform:scale(1.06)}}
+[data-theme="light"] .portfolio-shortcuts button,[data-theme="light"] .quick-navigation{background:#fffffff5;color:#242424;border-color:#d4d4d4}
+[data-theme="light"] .quick-search{border-color:#ccc}[data-theme="light"] .quick-search:focus-within{border-color:#e50914}
+[data-theme="light"] .quick-navigation nav a:hover{color:#b50913}
+@keyframes menu-enter{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes detail-enter{from{opacity:.5;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:760px){.portfolio-shortcuts{right:14px;bottom:14px}.portfolio-shortcuts kbd{display:none}.portfolio-shortcuts button{padding:11px 13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.quick-navigation[open],.experience-highlight-detail{animation:none}.technical-card,.credential-card,.page-callout,.education-card,.technical-card>svg,.credential-icon,.top-pick img,.button{transition:none!important}.technical-card:hover>svg,.credential-card:hover .credential-icon,.top-pick:hover img{transform:none}}

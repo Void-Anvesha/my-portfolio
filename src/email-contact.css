@@ -1,0 +1,7 @@
+.email-options{margin-top:20px;padding-top:16px;border-top:1px solid currentColor}
+.page-callout .email-address{font-weight:700;color:inherit;overflow-wrap:anywhere;user-select:all;margin:0 0 8px}
+.email-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.email-actions .button{font-size:12px;padding:10px 14px}
+.email-app-link{font-size:13px;text-decoration:underline;text-underline-offset:3px}
+.page-callout .email-status{font-size:12px;margin:12px 0 0}
+.email-status:empty{display:none}

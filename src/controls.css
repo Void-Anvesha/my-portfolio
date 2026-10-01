@@ -1,0 +1,44 @@
+/* Prominent navigation controls, without changing native link behavior. */
+.top-picks-row .top-pick{flex:0 0 clamp(230px,19vw,310px);min-width:0;height:auto;aspect-ratio:1.25;border:0;border-radius:5px}
+.top-picks-row .row-track{gap:13px}
+.top-picks-row .pick-label{inset:0;display:flex;align-items:center;justify-content:center;padding:18px;font-size:20px;font-weight:800;line-height:1.3;text-shadow:0 2px 6px #000c}
+.top-picks-row .pick-arrow{display:none}
+.top-picks-row .photo-artwork img{filter:none}
+.top-picks-row .top-pick:hover .photo-artwork img{filter:none;transform:scale(1.035)}
+.top-picks-row .top-pick:after{background:linear-gradient(180deg,#0003,#0006 50%,#0004)}
+.top-picks-row .section-heading h2{font-size:clamp(22px,2vw,29px);line-height:1.3;letter-spacing:-.6px}
+@media(max-width:600px){.top-picks-row .top-pick{flex-basis:78%;max-width:310px}.top-picks-row .pick-label{font-size:20px}.top-picks-row .section-heading h2{font-size:22px}}
+.compact-footer{padding-top:24px;padding-bottom:24px}
+.compact-footer-inner{display:flex;align-items:center;gap:25px;flex-wrap:wrap}
+.compact-footer-inner>.wordmark{font-size:25px}
+.compact-footer-inner>span{font-size:11px;line-height:1.7;color:#85858f}
+.compact-footer-links{display:flex;gap:22px;flex-wrap:wrap;margin-left:auto}
+.compact-footer-links a{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:#aaaab4}
+.compact-footer-links a:hover{color:white}
+@media(max-width:600px){.compact-footer-inner{gap:15px}.compact-footer-inner>span{font-size:10px}.compact-footer-links{width:100%;margin-left:0;padding-top:5px;justify-content:space-between}.compact-footer-links a{font-size:11px}}
+.navbar nav{gap:9px;align-items:center}
+.navbar nav a{display:inline-flex;align-items:center;justify-content:center;padding:10px 15px;font-size:13px;font-weight:750;line-height:1.25;border-radius:7px;border:1px solid #ffffff16;background:#ffffff05;color:#c9c9cf;white-space:nowrap;transition:background .2s,border-color .2s,color .2s}
+.navbar nav a:hover{background:#ffffff12;border-color:#ffffff35;color:#fff}
+.navbar nav a.active{background:#e50914;border-color:#e50914;color:#fff;box-shadow:0 3px 14px #e5091424}
+.navbar nav a.active:after{display:none}
+.page-back{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:11px 17px;margin-bottom:35px;border:1px solid #ffffff26;border-radius:7px;background:#242426;color:#e5e5e5;font-size:13px;line-height:1.4;font-weight:750;box-shadow:0 4px 12px #0002;transition:background .2s,border-color .2s}
+.page-back:hover{background:#343437;border-color:#ffffff50;color:white}
+.section-heading h2,.page-section>h2{font-weight:750}
+.credential-card{--credential-accent:#e8bc6e;position:relative;display:flex;flex-direction:column;min-width:0;padding:29px 30px 25px;border:1px solid #ffffff13;border-top:3px solid var(--credential-accent);border-radius:12px;background:radial-gradient(ellipse at 100% 0%,color-mix(in srgb,var(--credential-accent) 9%,transparent),transparent 65%),#1c1c1f;box-shadow:0 8px 25px #0002;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.credential-card:hover{transform:translateY(-4px);box-shadow:0 13px 30px #0004;border-color:color-mix(in srgb,var(--credential-accent) 45%,transparent)}
+.credential-flipkart{--credential-accent:#f0c35b}.credential-girlscript{--credential-accent:#ed9c69}.credential-etai{--credential-accent:#b99cf3}.credential-google{--credential-accent:#7fba9b}.credential-oracle{--credential-accent:#ed7f7f}.credential-fibonacci{--credential-accent:#85b9e2}
+.credential-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:26px}
+.credential-icon{display:grid;place-items:center;width:52px;height:52px;flex-shrink:0;color:var(--credential-accent);background:color-mix(in srgb,var(--credential-accent) 10%,transparent);border:1px solid color-mix(in srgb,var(--credential-accent) 23%,transparent);border-radius:13px}
+.credential-kind{font-size:9px;letter-spacing:1.6px;font-weight:700;color:#93939e}
+.credential-issuer{font-size:10px;letter-spacing:1.8px;line-height:1.5;font-weight:750;color:var(--credential-accent);margin-bottom:9px}
+.credential-card h2,.credential-card h3{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:clamp(24px,2.2vw,32px);line-height:1.18;font-weight:800;letter-spacing:-.8px;max-width:480px;margin:0 0 15px;text-wrap:balance;overflow-wrap:break-word;color:#f2f2f3}
+.credential-card>p{font-size:13px;line-height:1.8;color:#aaaab4;margin:0 0 26px}
+.credential-bottom{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:auto;padding-top:19px;border-top:1px solid #ffffff0c}
+.credential-badge{color:var(--credential-accent);font-size:10px;line-height:1.4;font-weight:750;background:color-mix(in srgb,var(--credential-accent) 9%,transparent);border:1px solid color-mix(in srgb,var(--credential-accent) 22%,transparent);border-radius:5px;padding:6px 9px}
+.credential-date{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:600;color:#9999a4;white-space:nowrap}
+.credential-compact{flex:0 0 calc((100% - 60px)/4);min-width:255px;scroll-snap-align:start;padding:22px 21px}
+.credential-compact .credential-top{margin-bottom:20px;gap:10px}.credential-compact .credential-icon{width:42px;height:42px}.credential-compact .credential-kind{font-size:7px;letter-spacing:1px}.credential-compact .credential-issuer{font-size:8px}
+.credential-compact h3{font-size:22px;letter-spacing:-.5px}.credential-compact>p{font-size:11px}.credential-compact .credential-bottom{gap:9px}.credential-compact .credential-badge{font-size:8px}.credential-compact .credential-date{font-size:8px}
+@media(max-width:1000px){.navbar{gap:22px}.navbar nav{gap:6px}.navbar nav a{font-size:12px;padding:9px 11px}}
+@media(max-width:760px){.navbar{height:108px;gap:7px 20px}.navbar nav{justify-content:space-between;gap:5px;padding-bottom:2px}.navbar nav a{font-size:11px;padding:8px 9px;border-radius:5px;flex-shrink:0}.page-back{font-size:12px;min-height:40px;padding:10px 14px}.detail-page{padding-top:142px}.hero-content{padding-top:154px}.credential-card{padding:24px 22px}.credential-card h2{font-size:27px}.credential-top{margin-bottom:22px}.credential-compact{flex-basis:80%;padding:22px}.credential-compact h3{font-size:23px}}
+@media(max-width:360px){.navbar nav{gap:4px}.navbar nav a{font-size:10px;padding:8px 7px}.credential-card h2{font-size:24px}}
