@@ -26,7 +26,7 @@ All portfolio content is in `src/data.js`. LinkedIn, LeetCode, Career Mentor, an
 
 Fonts load from Google Fonts, with local system-font fallbacks. Card photographs are stored in `public/images`; sources and license information are in `public/images/CREDITS.md`. Change the `photography` mapping in `src/data.js` to update them. The browser does not depend on an external image service. The selected profile persists for the browser session. The profile button returns to the entrance.
 
-## Browser checks
+## Browser checks to be considered
 
 ```sh
 npx playwright install chromium
