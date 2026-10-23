@@ -103,7 +103,7 @@ function Footer() {
 function App() {
   const path=window.location.pathname.replace(/\/$/,'')||'/';
   const isHome=path==='/';
-  useEffect(()=>{const label=navigation.find(item=>item.path===path)?.label||path.slice(1);document.title=isHome?'Anvesha | A Developer Original':`${label.charAt(0).toUpperCase()+label.slice(1)} | Anvesha Rastogi`;},[path,isHome]);
+  useEffect(()=>{document.title='Anvesha Rastogi';},[path]);
   const [persona,setPersona]=useState(()=>personas.find(item=>item.name===sessionStorage.getItem('anvesha-persona'))||personas[0]);
   function enter(choice){sessionStorage.setItem('anvesha-persona',choice.name);setPersona(choice);window.scrollTo(0,0);}
   return <><Navbar persona={persona} onProfile={()=>{sessionStorage.removeItem('anvesha-persona');setPersona(personas[0]);}}/><main>{isHome?<><Hero/><div className="collection template-work"><TopPicksRow/></div></>:<DetailPage path={path}/>}</main><Footer/><PortfolioInteractions/></>;
