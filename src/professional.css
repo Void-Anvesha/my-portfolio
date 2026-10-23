@@ -56,7 +56,7 @@
 .experience-contributions summary:hover{color:#f04e57}
 .experience-contributions[open] summary svg{transform:rotate(180deg)}
 .experience-tools{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.experience-tools>span{font-size:11px;color:var(--work-muted)}
+.experience-tools>span{font-size:11px;font-weight:700;color:var(--work-muted)}
 .professional-education .education-card{border-radius:10px;border-top:2px solid #e5091460;transition:transform .2s,border-color .2s;align-items:flex-start}
 .professional-education .education-card:hover{transform:translateY(-4px);border-color:#e5091480}
 .professional-education .education-card h3{font-size:16px;line-height:1.5;font-weight:600}
@@ -77,3 +77,341 @@
 @media(max-width:760px){.experience-interactive{padding:22px}.experience-title{align-items:flex-start;gap:12px}.experience-title h3{font-size:22px}.experience-title h3 span{display:block;margin-top:5px;font-size:18px}.experience-title .eyebrow{font-size:8px;letter-spacing:1px}.experience-icon{width:40px;height:40px}.experience-internship-overview,.experience-highlight-detail{padding:18px}.internship-story-grid{grid-template-columns:1fr}.experience-highlights{grid-template-columns:1fr;gap:10px}.experience-highlights button{display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px;min-height:112px;padding:16px}.experience-highlights strong{grid-column:2;grid-row:1 / 3;font-size:22px;margin:0;text-align:right}.highlight-caption{grid-column:1}.highlight-detail-heading{display:block}.highlight-detail-heading span{display:block;margin-top:6px}.experience-highlight-detail{min-height:0}.professional-education .education-card{flex-wrap:wrap}.professional-education .education-score{width:100%;align-items:flex-start;margin-top:8px}}
 @media(max-width:560px){.internship-metrics{grid-template-columns:1fr}.internship-metrics>div{padding:14px}.internship-metrics strong{font-size:20px}.internship-summary{font-size:14.5px}.internship-note{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.experience-highlights button,.professional-education .education-card{transition:none}.experience-highlights button:hover,.professional-education .education-card:hover{transform:none}.experience-highlight-detail.swipe-next,.experience-highlight-detail.swipe-prev{animation:none}}
+
+.detail-page .snapshot-metrics>div,
+.detail-page .experience-proof .internship-metrics>div{
+  background:#fffaf4;
+  color:#111;
+}
+.detail-page .snapshot-metrics strong,
+.detail-page .experience-proof .internship-metrics strong{
+  color:#111 !important;
+}
+.detail-page .snapshot-metrics span:last-child,
+.detail-page .experience-proof .internship-metrics span:last-child{
+  color:#3f3a38 !important;
+}
+.detail-page .snapshot-metrics .metric-icon,
+.detail-page .experience-proof .internship-metrics .metric-icon{
+  border-color:#111;
+  background:#f8d7df;
+  color:#111;
+}
+
+/* Recruiter-friendly professional section refresh */
+.experience-interactive{
+  max-width:1180px;
+  margin:0 auto;
+  padding:clamp(24px,3vw,42px);
+  border-top:2px solid var(--red);
+  border-radius:14px;
+  background:linear-gradient(145deg,#202023,#18181b 72%);
+  box-shadow:0 22px 70px #0004;
+}
+.experience-title{
+  margin-bottom:30px;
+}
+.experience-title h3{
+  font-size:clamp(28px,3vw,40px);
+  line-height:1.15;
+  letter-spacing:-.7px;
+}
+.experience-icon{
+  width:64px;
+  height:64px;
+  border-radius:16px;
+}
+.recruiter-snapshot{
+  display:grid;
+  grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr);
+  gap:28px;
+  align-items:stretch;
+  padding:28px;
+  border:1px solid var(--work-border);
+  border-radius:14px;
+  background:linear-gradient(145deg,#ffffff08,#ffffff02);
+}
+.snapshot-copy h4{
+  max-width:720px;
+  margin:0 0 16px;
+  font-size:clamp(24px,2.4vw,34px);
+  line-height:1.2;
+  letter-spacing:-.5px;
+  color:#f4f4f5;
+}
+.snapshot-copy .internship-summary{
+  max-width:760px;
+  margin:0;
+  font-size:16px;
+  line-height:1.8;
+}
+.snapshot-metrics{
+  display:grid;
+  gap:12px;
+}
+.snapshot-metrics>div{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:5px 14px;
+  align-items:center;
+  padding:16px;
+  border:1px solid #ffffff14;
+  border-radius:10px;
+  background:linear-gradient(145deg,#12141a,#0f1015);
+}
+.snapshot-metrics .metric-icon{
+  grid-row:1 / 3;
+  margin:0;
+}
+.snapshot-metrics strong{
+  font-size:24px;
+  line-height:1.1;
+  color:#fff;
+}
+.snapshot-metrics span:last-child{
+  font-size:12px;
+  line-height:1.45;
+  color:var(--work-muted);
+}
+.experience-workbench{
+  margin-top:30px;
+  padding:28px;
+  border:1px solid var(--work-border);
+  border-radius:14px;
+  background:linear-gradient(145deg,#15161b,#1d181a);
+}
+.workbench-heading{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:28px;
+  margin-bottom:22px;
+}
+.workbench-heading h4{
+  max-width:650px;
+  margin:0;
+  font-size:clamp(20px,2vw,28px);
+  line-height:1.25;
+  letter-spacing:-.4px;
+  color:#f3f3f4;
+}
+.workbench-grid{
+  display:grid;
+  grid-template-columns:minmax(260px,330px) minmax(0,1fr);
+  gap:20px;
+  align-items:stretch;
+}
+.workbench-grid .experience-highlights{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+.workbench-grid .experience-highlights button{
+  min-height:112px;
+  padding:18px;
+}
+.workbench-grid .experience-highlights strong{
+  margin:16px 0 5px;
+  font-size:24px;
+}
+.workbench-grid .experience-highlight-detail{
+  margin:0;
+  min-height:100%;
+  padding:28px;
+  border-radius:12px;
+  background:linear-gradient(145deg,#ffffff08,#ffffff03);
+}
+.workbench-grid .experience-highlight-detail>p{
+  max-width:900px;
+  font-size:16px;
+  line-height:1.8;
+}
+.workbench-grid .experience-explanation{
+  gap:24px;
+}
+.workbench-grid .experience-explanation p{
+  font-size:15px;
+  line-height:1.8;
+}
+.experience-proof{
+  display:grid;
+  gap:18px;
+  margin-top:28px;
+}
+.experience-proof .internship-story-grid,
+.experience-proof .internship-metrics{
+  margin:0;
+}
+.experience-proof .internship-story-grid section,
+.experience-proof .internship-metrics>div{
+  min-height:auto;
+  padding:18px;
+}
+.experience-proof .internship-metrics{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+.experience-proof .internship-metrics strong{
+  font-size:24px;
+}
+.experience-proof .internship-note{
+  max-width:980px;
+  margin:6px 0 0;
+  padding:18px 18px 18px 22px;
+  border-radius:10px;
+  background:#ffffff05;
+}
+.experience-contributions{
+  margin-top:28px;
+}
+
+[data-theme="light"] .experience-interactive{
+  background:linear-gradient(145deg,#fff,#f6f7fa);
+  box-shadow:0 16px 45px #26334a0c;
+}
+[data-theme="light"] .snapshot-copy h4,
+[data-theme="light"] .workbench-heading h4{
+  color:#172033;
+}
+[data-theme="light"] .recruiter-snapshot,
+[data-theme="light"] .experience-workbench,
+[data-theme="light"] .workbench-grid .experience-highlight-detail{
+  background:linear-gradient(145deg,#fff,#f8f9fb);
+}
+[data-theme="light"] .snapshot-metrics>div{
+  background:linear-gradient(145deg,#fff,#f6f7fa);
+}
+[data-theme="light"] .snapshot-metrics strong{
+  color:#172033;
+}
+
+@media(max-width:1050px){
+  .recruiter-snapshot{
+    grid-template-columns:1fr;
+  }
+  .snapshot-metrics{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+  .snapshot-metrics>div{
+    display:block;
+  }
+  .snapshot-metrics .metric-icon{
+    margin-bottom:12px;
+  }
+  .workbench-grid{
+    grid-template-columns:1fr;
+  }
+  .workbench-grid .experience-highlights{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+}
+
+@media(max-width:760px){
+  .experience-interactive{
+    padding:22px;
+    border-radius:12px;
+  }
+  .recruiter-snapshot,
+  .experience-workbench{
+    padding:20px;
+  }
+  .workbench-heading{
+    display:block;
+  }
+  .workbench-heading h4{
+    margin-top:10px;
+  }
+  .snapshot-metrics,
+  .workbench-grid .experience-highlights,
+  .experience-proof .internship-metrics{
+    grid-template-columns:1fr;
+  }
+  .snapshot-copy .internship-summary,
+  .workbench-grid .experience-highlight-detail>p,
+  .workbench-grid .experience-explanation p{
+    font-size:14.5px;
+    line-height:1.75;
+  }
+  .workbench-grid .experience-highlight-detail{
+    padding:20px;
+  }
+}
+
+.detail-page .experience-workbench{
+  border:2px solid #111;
+  background:#f5f1ea !important;
+  color:#111;
+  box-shadow:7px 8px 0 #111;
+}
+.detail-page .workbench-heading,
+.detail-page .workbench-heading h4,
+.detail-page .workbench-heading .internship-eyebrow{
+  color:#111 !important;
+}
+.detail-page .workbench-heading .internship-eyebrow:after{
+  background:linear-gradient(90deg,#111,transparent);
+}
+.detail-page .workbench-grid .experience-highlight-detail{
+  border:2px solid #111;
+  border-left:5px solid #e50914;
+  background:#fffaf4 !important;
+  color:#111;
+  box-shadow:4px 5px 0 #111;
+}
+.detail-page .workbench-grid .experience-highlight-detail h4,
+.detail-page .workbench-grid .experience-highlight-detail h5,
+.detail-page .workbench-grid .experience-highlight-detail p,
+.detail-page .workbench-grid .experience-highlight-tools,
+.detail-page .workbench-grid .experience-highlight-tools strong{
+  color:#111 !important;
+}
+.detail-page .highlight-detail-heading span{
+  color:#b80914 !important;
+}
+
+.detail-page .experience-title{
+  margin-bottom:18px;
+}
+
+.detail-page .recruiter-snapshot{
+  grid-template-columns:minmax(0,1fr) minmax(300px,420px);
+  gap:22px;
+  align-items:center;
+  padding:22px 24px;
+}
+
+.detail-page .snapshot-copy h4{
+  max-width:620px;
+  margin-bottom:12px;
+  color:#111 !important;
+  font-size:clamp(22px,2vw,30px);
+  line-height:1.16;
+}
+
+.detail-page .snapshot-copy .internship-summary{
+  max-width:680px;
+  font-size:15.5px;
+  line-height:1.68;
+}
+
+.detail-page .snapshot-metrics{
+  gap:10px;
+}
+
+.detail-page .snapshot-metrics>div{
+  padding:14px 16px;
+  min-height:84px;
+}
+
+.detail-page .snapshot-metrics strong{
+  font-size:22px;
+}
+
+.detail-page .snapshot-metrics span:last-child{
+  margin-top:2px;
+}
+
+@media(max-width:1050px){
+  .detail-page .recruiter-snapshot{
+    grid-template-columns:1fr;
+  }
+}

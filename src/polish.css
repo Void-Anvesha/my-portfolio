@@ -47,14 +47,41 @@ main{position:relative;isolation:isolate}
   transition:left .45s ease;
 }
 .button:hover:after{left:115%}
+.button svg{
+  transition:transform .25s ease;
+}
+.button:hover svg{
+  transform:translateX(2px) scale(1.05);
+}
 .hero-content{
   animation:page-rise .65s ease-out both;
 }
+.hero h1{
+  animation:title-focus .9s cubic-bezier(.16,1,.3,1) both;
+}
+.hero-description,.hero-actions{
+  animation:page-rise .7s ease-out both;
+}
+.hero-description{animation-delay:.12s}
+.hero-actions{animation-delay:.22s}
 .screen-window{
+  position:relative;
   box-shadow:0 30px 90px #0008,0 0 0 1px #ffffff10,0 0 70px #e5091414;
   animation:screen-drift 8s ease-in-out infinite;
 }
+.screen-window:after{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(120deg,transparent 20%,#ffffff10 45%,transparent 70%);
+  translate:-130% 0;
+  animation:screen-sheen 6.5s ease-in-out infinite;
+}
 .screen-code span.code-green{filter:drop-shadow(0 0 7px #4fd9d466)}
+.screen-status span:first-child{
+  animation:status-pulse 1.4s ease-in-out infinite;
+}
 .page-heading{
   animation:page-rise .55s ease-out both;
 }
@@ -86,6 +113,7 @@ main{position:relative;isolation:isolate}
 }
 .top-pick{
   box-shadow:0 14px 34px #0004;
+  transition:transform .28s ease,box-shadow .28s ease,filter .28s ease;
 }
 .top-pick:before{
   content:'';
@@ -98,7 +126,19 @@ main{position:relative;isolation:isolate}
 }
 .top-pick:hover{
   box-shadow:0 22px 55px #0007;
+  transform:translateY(-7px) scale(1.015);
 }
+.top-pick:after{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+  background:linear-gradient(115deg,transparent 10%,#ffffff18 43%,transparent 68%);
+  translate:-120% 0;
+  transition:translate .7s cubic-bezier(.16,1,.3,1);
+}
+.top-pick:hover:after{translate:120% 0}
 .pick-label{
   z-index:2;
   text-shadow:0 2px 8px #000c,0 0 24px #e5091435;
@@ -137,6 +177,9 @@ main{position:relative;isolation:isolate}
   transform:translateY(-3px);
   border-color:#ffffff28;
   box-shadow:0 26px 70px #0006;
+}
+.case-study.is-expanded{
+  animation:expanded-glow .45s ease-out;
 }
 .case-visual:after{
   content:'';
@@ -181,19 +224,289 @@ main{position:relative;isolation:isolate}
   transition:color .2s ease,transform .2s ease;
 }
 .compact-footer-links a:hover{transform:translateY(-2px)}
+.profile-choice{
+  animation:profile-pop .55s cubic-bezier(.16,1,.3,1) both;
+}
+.profile-choice:nth-child(2){animation-delay:.08s}
+.profile-choice:nth-child(3){animation-delay:.16s}
+.profile-choice:nth-child(4){animation-delay:.24s}
+.profile-choice:hover .monster-avatar{
+  animation:avatar-bounce .55s cubic-bezier(.16,1,.3,1);
+}
+.mini-profile:hover .monster-avatar{
+  animation:avatar-bounce .55s cubic-bezier(.16,1,.3,1);
+}
 @keyframes page-rise{
   from{opacity:0;transform:translateY(18px)}
   to{opacity:1;transform:none}
 }
+@keyframes title-focus{
+  from{opacity:0;letter-spacing:.08em;filter:blur(10px);transform:translateY(16px)}
+  to{opacity:1;letter-spacing:1px;filter:none;transform:none}
+}
 @keyframes screen-drift{
   0%,100%{translate:0 0}
   50%{translate:0 -8px}
+}
+@keyframes screen-sheen{
+  0%,45%{translate:-130% 0}
+  70%,100%{translate:130% 0}
+}
+@keyframes status-pulse{
+  0%,100%{opacity:.45;box-shadow:0 0 0 #4fd79b00}
+  50%{opacity:1;box-shadow:0 0 14px #4fd79b88}
+}
+@keyframes expanded-glow{
+  from{box-shadow:0 0 0 #e5091400}
+  45%{box-shadow:0 0 0 4px #e5091422,0 24px 70px #0007}
+  to{box-shadow:0 18px 44px #0003}
+}
+@keyframes profile-pop{
+  from{opacity:0;transform:translateY(22px) scale(.94)}
+  to{opacity:1;transform:none}
+}
+@keyframes avatar-bounce{
+  0%,100%{transform:translateY(0) scale(1)}
+  45%{transform:translateY(-8px) scale(1.06)}
 }
 @media(max-width:760px){
   .screen-window{animation:none}
   .case-study.project-detail:hover,.technical-card:hover,.education-card:hover{transform:none}
 }
 @media(prefers-reduced-motion:reduce){
-  .hero-content,.page-heading,.screen-window{animation:none}
+  .hero-content,.hero h1,.hero-description,.hero-actions,.page-heading,.screen-window,.screen-status span:first-child,.case-study.is-expanded,.profile-choice,.profile-choice:hover .monster-avatar,.mini-profile:hover .monster-avatar{animation:none}
   .button:after,.case-visual:after{display:none}
+  .button svg,.top-pick{transition:none}
+  .button:hover svg,.top-pick:hover{transform:none}
+}
+
+.mind-copy{
+  opacity:1;
+  transform:none;
+  animation:none;
+}
+
+.mind-copy h1{
+  opacity:1;
+  transform:none;
+  animation:none;
+  letter-spacing:-.055em;
+}
+
+.navbar nav a:before,
+.navbar nav a:after,
+.navbar nav a.active:before,
+.navbar nav a.active:after,
+.navbar nav a:hover:before,
+.navbar nav a:hover:after{
+  display:none !important;
+  content:none !important;
+}
+
+.navbar nav a.active{
+  box-shadow:none !important;
+}
+
+.navbar.scrolled{
+  background:linear-gradient(90deg,#7c6ba4e8,#8a627fe8) !important;
+  border-bottom-color:#ffffff20 !important;
+  box-shadow:0 12px 34px #17111f26 !important;
+}
+
+.mind-copy .template-actions .button.secondary{
+  background:#f5f5f5 !important;
+  color:#141414 !important;
+  border-color:#111 !important;
+  box-shadow:5px 6px 0 #111 !important;
+}
+
+.mind-copy .template-actions .button.secondary:hover{
+  background:#d7d7d7 !important;
+}
+
+.page-section>h2,
+.detail-page .page-section>h2,
+.technical-category>h2,
+.skills-detail-page .technical-category>h2{
+  border-bottom:0 !important;
+  padding-bottom:0 !important;
+}
+
+.page-section>h2:after,
+.detail-page .page-section>h2:after,
+.technical-category>h2:after,
+.skills-detail-page .technical-category>h2:after{
+  display:none !important;
+  content:none !important;
+}
+
+.detail-page{
+  animation:route-soft-in .55s cubic-bezier(.16,1,.3,1) both;
+}
+
+.page-section,
+.project-explorer,
+.technical-skills,
+.certifications-page-grid,
+.hire-page-grid{
+  animation:section-breathe-in .65s cubic-bezier(.16,1,.3,1) both;
+}
+
+.professional-detail,
+.github-activity-section,
+.education-card,
+.technical-card,
+.credential-card,
+.case-study,
+.page-callout{
+  transform-origin:center top;
+  will-change:transform;
+}
+
+.professional-detail:hover,
+.github-activity-section:hover,
+.page-callout:hover{
+  transform:translateY(-4px);
+  border-color:#ffffff30;
+  box-shadow:0 22px 60px #0004;
+}
+
+.snapshot-metrics>div,
+.internship-metrics>div,
+.internship-story-grid>section,
+.experience-highlights button,
+.project-filters button,
+.case-tabs button,
+.compact-footer-links a{
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease,color .22s ease;
+}
+
+.snapshot-metrics>div:hover,
+.internship-metrics>div:hover,
+.internship-story-grid>section:hover,
+.experience-highlights button:hover{
+  transform:translateY(-5px);
+  box-shadow:0 14px 34px #0002;
+}
+
+.experience-highlight-detail,
+.case-panel{
+  animation:detail-panel-in .42s cubic-bezier(.16,1,.3,1) both;
+}
+
+.project-filters button:hover,
+.project-filters button[aria-pressed="true"],
+.case-tabs button:hover,
+.case-tabs button[aria-selected="true"]{
+  transform:translateY(-2px);
+}
+
+.skill-search-bar,
+.github-activity-chart,
+.case-visual,
+.project-detail-image{
+  position:relative;
+  overflow:hidden;
+}
+
+.skill-search-bar:after,
+.github-activity-chart:after,
+.case-visual:before{
+  content:'';
+  position:absolute;
+  inset:-40% auto -40% -55%;
+  width:42%;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,#ffffff26,transparent);
+  transform:skewX(-18deg);
+  opacity:.55;
+  transition:left .65s ease;
+}
+
+.skill-search-bar:hover:after,
+.github-activity-chart:hover:after,
+.case-study:hover .case-visual:before{
+  left:120%;
+}
+
+.technical-category{
+  animation:category-slide .7s cubic-bezier(.16,1,.3,1) both;
+}
+
+.technical-card:hover svg,
+.credential-card:hover .credential-icon,
+.education-card:hover svg,
+.metric-icon{
+  animation:icon-pop .46s ease both;
+}
+
+.button:active,
+.project-filters button:active,
+.experience-highlights button:active,
+.case-tabs button:active{
+  transform:scale(.97);
+}
+
+@keyframes route-soft-in{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:none}
+}
+
+@keyframes section-breathe-in{
+  from{opacity:.72;transform:translateY(18px)}
+  to{opacity:1;transform:none}
+}
+
+@keyframes detail-panel-in{
+  from{opacity:0;filter:blur(6px);transform:translateY(14px)}
+  to{opacity:1;filter:blur(0);transform:none}
+}
+
+@keyframes category-slide{
+  from{opacity:.55;transform:translateY(22px)}
+  to{opacity:1;transform:none}
+}
+
+@keyframes icon-pop{
+  0%{transform:scale(1)}
+  45%{transform:scale(1.16) rotate(-4deg)}
+  100%{transform:scale(1)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .detail-page,
+  .page-section,
+  .project-explorer,
+  .technical-skills,
+  .certifications-page-grid,
+  .hire-page-grid,
+  .experience-highlight-detail,
+  .case-panel,
+  .technical-category,
+  .technical-card:hover svg,
+  .credential-card:hover .credential-icon,
+  .education-card:hover svg,
+  .metric-icon{
+    animation:none !important;
+  }
+
+  .professional-detail:hover,
+  .github-activity-section:hover,
+  .page-callout:hover,
+  .snapshot-metrics>div:hover,
+  .internship-metrics>div:hover,
+  .internship-story-grid>section:hover,
+  .experience-highlights button:hover,
+  .project-filters button:hover,
+  .project-filters button[aria-pressed="true"],
+  .case-tabs button:hover,
+  .case-tabs button[aria-selected="true"]{
+    transform:none !important;
+  }
+
+  .skill-search-bar:after,
+  .github-activity-chart:after,
+  .case-visual:before{
+    display:none !important;
+  }
 }

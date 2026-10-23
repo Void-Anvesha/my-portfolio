@@ -23,7 +23,7 @@ function Screenshot({item,photo,onClose}){
 }
 
 function ProjectCaseStudy({item,index}){
-  const [expanded,setExpanded]=useState(index===0);
+  const [expanded,setExpanded]=useState(false);
   const [tab,setTab]=useState(0);
   const [preview,setPreview]=useState(false);
   const photo=photography[item.id];
