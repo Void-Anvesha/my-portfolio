@@ -313,6 +313,26 @@ main{position:relative;isolation:isolate}
   box-shadow:0 12px 34px #17111f26 !important;
 }
 
+body:has(.detail-professional) .navbar.scrolled{
+  background:linear-gradient(90deg,#8b3d50e8,#2b1720e8) !important;
+}
+
+body:has(.detail-skills) .navbar.scrolled{
+  background:linear-gradient(90deg,#31562de8,#172917e8) !important;
+}
+
+body:has(.detail-projects) .navbar.scrolled{
+  background:linear-gradient(90deg,#365173e8,#111b2be8) !important;
+}
+
+body:has(.detail-hire-me) .navbar.scrolled{
+  background:linear-gradient(90deg,#a54d3de8,#301814e8) !important;
+}
+
+body:has(.detail-certifications) .navbar.scrolled{
+  background:linear-gradient(90deg,#6b548fe8,#21172ee8) !important;
+}
+
 .mind-copy .template-actions .button.secondary{
   background:#f5f5f5 !important;
   color:#141414 !important;
